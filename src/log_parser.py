@@ -10,9 +10,12 @@ class LogParser:
 
 
     def load_file(self):
-        with open(self.file_path) as f:
+        with (open(self.file_path) as f):
             for line in f:
-                print(line)
+                event=self.parse_line(line)
+                if event is not None:
+                    self.events.append(event)
+
 
 
     def parse_line(self, line):
