@@ -1,13 +1,3 @@
-"""
-log_parser.py
-
-LogParser reads an OpenSSH log file and turns the lines you care about
-into LoginEvent objects.
-
-YOUR JOB: replace each `raise NotImplementedError(...)` with real code.
-Each method's docstring says what it must do. The hints point the way.
-"""
-
 from login_event import LoginEvent
 
 
@@ -18,19 +8,12 @@ class LogParser:
         self.events = []         # list of LoginEvent objects
         self.skipped_lines = 0   # lines that weren't a failed attempt
 
-    def load_file(self):
-        """
-        Open self.file_path and send every line to parse_line().
-        If parse_line() gives back an event (not None), add it to self.events.
 
-        Hints:
-        - open() + with (Module 7). A for loop walks a file one line at a time.
-        - Which error does Python raise when the file isn't there?
-          Catch it with try/except and print a clear message instead of crashing.
-        - Test it first by just printing each line. Then swap the print
-          for the call to parse_line().
-        """
-        raise NotImplementedError("TODO: write load_file()")
+    def load_file(self):
+        with open(self.file_path) as f:
+            for line in f:
+                print(line)
+
 
     def parse_line(self, line):
         """

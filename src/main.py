@@ -1,9 +1,5 @@
 
 import os
-from email import parser
-from ensurepip import __main__
-
-from LogAnalyser.src import detector
 from log_parser import LogParser
 from detector import BruteForceDetector
 
@@ -56,3 +52,7 @@ def main():
         print(ip,"-", failures,"-","Failed Attempts = ")
 if __name__=="__main__":
     main()
+
+
+
+
