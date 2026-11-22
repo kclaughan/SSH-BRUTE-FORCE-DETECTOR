@@ -19,4 +19,19 @@ class LogParser:
 
 
     def parse_line(self, line):
+        if "Failed password" not in line:
+            self.skipped_lines += 1
+            return None
+        words= line.split()
+        timestamp =  " ".join(words[0:3])
+        ip = words[-4]
+        username= words[-6]
+        invalid_user = "invalid user" in line
+        return LoginEvent(timestamp,ip,username,"failed", invalid_user,)
+
+
+    def get_events(self):
+        """Return the list of LoginEvent objects."""
+        return self.events
+
 
