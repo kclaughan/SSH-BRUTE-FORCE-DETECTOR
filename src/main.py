@@ -13,9 +13,6 @@ def get_log_path():
             print("File not found")
 
 
-
-
-
 def get_threshold():
     while True:
         answer = (input("Flag Ip Address with more than how many attempts? "))
@@ -27,8 +24,6 @@ def get_threshold():
                 print("Value must be above 0")
         except ValueError:
             print("Please enter a whole number")
-
-
 
 def main():
     print("==   SSH Brute Force Detector     ==")
