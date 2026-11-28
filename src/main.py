@@ -40,6 +40,7 @@ def main():
     detector .count_failures()
     print(detector.failures_by_ip["183.62.140.253"])
     detector.find_targeted_users()
+    print(detector.users_by_ip["183.62.140.253"])
     detector.flag_suspicious()
 
     print("IPs To Watch: Suspected Suspicious")

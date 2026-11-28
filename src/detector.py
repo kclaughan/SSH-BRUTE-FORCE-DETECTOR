@@ -16,3 +16,11 @@ class BruteForceDetector:
                 self.failures_by_ip[ip]+=1
             else:
                 self.failures_by_ip[ip]=1
+
+    def find_targeted_users(self):
+        for event in self.events:
+            ip = event.ip
+            username = event.username
+            if ip not in self.users_by_ip:
+                self.users_by_ip[ip]=set()
+            self.users_by_ip[ip].add(username)
