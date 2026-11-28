@@ -38,6 +38,7 @@ def main():
 
     detector = BruteForceDetector(events,threshold)
     detector .count_failures()
+    print(detector.failures_by_ip["183.62.140.253"])
     detector.find_targeted_users()
     detector.flag_suspicious()
 
